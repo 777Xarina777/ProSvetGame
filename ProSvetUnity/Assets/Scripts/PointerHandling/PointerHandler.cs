@@ -3,22 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PointerHandler : MonoBehaviour
+public class PointerHandler<T> where T : IPointerHandler
 {
     private IPointerHandler _currentClickable, _previousClickable;
-    private SpriteRenderer _concuredTerritory;
 
-    public static Vector2 MouseTarget
+    public void HandleSinglePointer(RaycastHit2D rayHitObj)
     {
-        get 
-        {
-            return Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        }
-    }
-    
-    protected void HandleSinglePointer(RaycastHit2D rayHitObj)
-    {
-        if (rayHitObj && rayHitObj.collider.TryGetComponent(out IPointerHandler item))       // if hover any IClickable
+        if (rayHitObj && rayHitObj.collider.TryGetComponent(out T item))                // if hover any IClickable
         {
             _previousClickable = _currentClickable;                                     // keep previous item
             _currentClickable = item;                                                   // set new current item

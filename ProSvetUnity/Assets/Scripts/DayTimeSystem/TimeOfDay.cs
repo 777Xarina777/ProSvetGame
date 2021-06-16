@@ -34,8 +34,8 @@ public class TimeOfDay : MonoBehaviour
 
     // pointer handlers
     [SerializeField] private Camera _mainCamera;
-    private PointerHandler _dialoguePointerHandler;
-    private PointerHandler _itemPointerHandler;
+    private PointerHandler<DialogueInteraction> _dialoguePointerHandler;
+    private PointerHandler<InteractableItem> _itemPointerHandler;
 
     #endregion
 
@@ -46,8 +46,8 @@ public class TimeOfDay : MonoBehaviour
 
     private void Start()
     {
-        _dialoguePointerHandler = _mainCamera.GetComponent<DialoguePointerHandler>();
-        _itemPointerHandler = _mainCamera.GetComponent<ItemPointerHandler>();
+        // _dialoguePointerHandler = new PointerHandler<DialogueInteraction>();
+        // _itemPointerHandler = new PointerHandler<InteractableItem>();
 
         _nightEventSystem = GameObject.Find("TimeOfDay/NightEventSystem");
         _nightEventSystem.SetActive(false);
@@ -61,8 +61,8 @@ public class TimeOfDay : MonoBehaviour
         Debug.Log("Evening Enter");
         onTimeOfDayChange?.Invoke(States.Evening);
 
-        Helpers.TogglePointerHandler(_dialoguePointerHandler, true); // give access to dialogue interaction
-        Helpers.TogglePointerHandler(_itemPointerHandler, false);    // restrict access to interactable item
+         // give access to dialogue interaction
+            // restrict access to interactable item
     }
 
     void Evening_Update()
@@ -97,8 +97,8 @@ public class TimeOfDay : MonoBehaviour
         Debug.Log("Enter Night");
         onTimeOfDayChange?.Invoke(States.Night);
 
-        Helpers.TogglePointerHandler(_dialoguePointerHandler, false);
-        Helpers.TogglePointerHandler(_itemPointerHandler, true);
+        
+        
 
         _nightEventSystem.SetActive(true);
     }
@@ -117,8 +117,8 @@ public class TimeOfDay : MonoBehaviour
         Debug.Log("Enter Morning");
         onTimeOfDayChange?.Invoke(States.Morning);
 
-        Helpers.TogglePointerHandler(_dialoguePointerHandler, false);
-        Helpers.TogglePointerHandler(_itemPointerHandler, false);
+        
+        
         _nightEventSystem.SetActive(false);
     }
 

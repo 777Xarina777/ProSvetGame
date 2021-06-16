@@ -13,8 +13,8 @@ public static class Helpers
     public static void ToggleInteractableItemComponents(List<InteractableItem> items, bool state)
         => items.ForEach(i => i.enabled = state);
 
-    public static void TogglePointerHandler(PointerHandler pointerHandler, bool state) =>
-        pointerHandler.enabled = state;
+    // public static void TogglePointerHandler<T>(PointerHandler<T> pointerHandler, bool state) where T : IPointerHandler
+    //     => pointerHandler.enabled = state;
 
     public static bool Reached(Transform current, Transform target) =>
         Vector2.Distance(current.position, target.position) < 0.1;
