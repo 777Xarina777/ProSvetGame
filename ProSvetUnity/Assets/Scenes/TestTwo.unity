@@ -2173,7 +2173,7 @@ PrefabInstance:
     - target: {fileID: 1421007306237116365, guid: 6b097b2f65f17394786d6d69108608ca,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1421007306557365509, guid: 6b097b2f65f17394786d6d69108608ca,
         type: 3}
@@ -4057,12 +4057,13 @@ PrefabInstance:
     - target: {fileID: 8619627650687598663, guid: 03f86d8a7a6202c4b9365d593252621c,
         type: 3}
       propertyPath: _dialogue.sentences.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8619627650687598663, guid: 03f86d8a7a6202c4b9365d593252621c,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[2]
-      value: 
+      value: "\u041F\u043E\u043A\u0430 \u043D\u0435 \u0441\u0442\u0430\u043B\u043E
+        \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u043F\u043E\u0437\u0434\u043D\u043E"
       objectReference: {fileID: 0}
     - target: {fileID: 9137076107515504575, guid: 03f86d8a7a6202c4b9365d593252621c,
         type: 3}
@@ -4177,6 +4178,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 13.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289273171888845728, guid: ece5f36061e11c1428b579173288df52,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[1]
+      value: "\u041D\u0430\u0434\u0435\u044E\u0441\u044C \u043A\u0440\u0430\u043D
+        \u0443\u0436\u0435 \u043F\u043E\u0447\u0438\u043D\u0438\u043B\u0438"
       objectReference: {fileID: 0}
     - target: {fileID: 6797719943531848476, guid: ece5f36061e11c1428b579173288df52,
         type: 3}
